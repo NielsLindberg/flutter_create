@@ -21,9 +21,8 @@ Because of how well CustomPaint, Gestures and Animations integrate together it h
 4. Attach Android or iOs device.
 5. In bash run: flutter run --release
 
-####
-zip_cmd = zip -9 -r --exclude=*.git* --exclude=*.iml* flutter_create.zip .
+#### zip_cmd
+zip -9 -r --exclude=*.git* --exclude=*.iml* flutter_create.zip .
 
 
-####
-Created by Niels Lindberg-Poulsen, March 2019
+##### Created by Niels Lindberg-Poulsen, March 2019
