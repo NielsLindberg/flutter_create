@@ -1,6 +1,6 @@
 # flutter_create
 
-A small 5111 bytes flutter application for the 2019 FlutterCreate challenge.
+A small 5076 bytes flutter application for the 2019 FlutterCreate challenge.
 Developed in Android Studio and tested on Android Emulator & Devices. I don't have access to iOS devices other than the emulator 'iOS rendering platform' to test but I guess it should work.
 
 ## Idea
@@ -22,7 +22,7 @@ Because of how well CustomPaint, Gestures and Animations integrate together it h
 5. In bash run: flutter run --release
 
 #### zip_cmd
-zip -9 -r --exclude=*.git* --exclude=*.iml* flutter_create.zip .
+zip -9 -r --exclude=*.git* --exclude=*.iml* --exclude=*.idea* --exclude=*.zip* flutter_create.zip .
 
 
 ##### Created by Niels Lindberg-Poulsen, March 2019

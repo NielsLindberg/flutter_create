@@ -19,19 +19,10 @@ double dragDy = 0.0;
 bool lampOn = false;
 bool draggable = true;
 bool dragging = false;
-double indicatorPercent = 0.0;
 AnimationController lampController;
 Animation<double> animDy;
 MaterialColor color = Colors.deepPurple;
-List<String> textList = [
-'#FlutterCreate',
-'Pixel Perfect',
-'Cross Platform',
-'Smooth Animations',
-'Hot Reload',
-'Open Source',
-'5kb',
-];
+List<String> textList = ['#FlutterCreate', 'Pixel Perfect', 'Cross Platform', 'Smooth Animations', 'Hot Reload', 'Open Source', '5kb'];
 int textIdx = 0;
 @override
 void initState() {
