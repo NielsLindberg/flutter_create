@@ -30,6 +30,7 @@ List<String> textList = [
 'Smooth Animations',
 'Hot Reload',
 'Open Source',
+'5kb',
 ];
 int textIdx = 0;
 @override
