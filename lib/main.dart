@@ -14,7 +14,7 @@ class LampScreen extends StatefulWidget {
 _LampScreenState createState() => _LampScreenState();
 }
 class _LampScreenState extends State<LampScreen> with TickerProviderStateMixin {
-Offset dragStart;
+double dragStart = 0.0;
 double dragDy = 0.0;
 bool lampOn = false;
 bool draggable = true;
@@ -22,7 +22,15 @@ bool dragging = false;
 AnimationController lampController;
 Animation<double> animDy;
 MaterialColor color = Colors.deepPurple;
-List<String> textList = ['#FlutterCreate', 'Pixel Perfect', 'Cross Platform', 'Smooth Animations', 'Hot Reload', 'Open Source', '5kb'];
+List<String> textList = [
+'#FlutterCreate',
+'Pixel Perfect',
+'Cross Platform',
+'Smooth Animations',
+'Hot Reload',
+'Open Source',
+'5kb'
+];
 int textIdx = 0;
 @override
 void initState() {
@@ -71,7 +79,7 @@ fontSize: 25,
 fontWeight: FontWeight.w900,
 color: color.shade300))),
 Transform.translate(
-offset: Offset(151, 320 + dragDy),
+offset: Offset(152, 320 + dragDy),
 child: Stack(
 children: [
 Visibility(
@@ -89,16 +97,17 @@ width: 75,
 height: 75,
 child: GestureDetector(
 onVerticalDragStart: (details) {
-dragStart = details.globalPosition;
-dragging = true;
+lampController.stop();
+dragStart = details.globalPosition.dy - dragDy;
 draggable = true;
+dragging = true;
 },
 onVerticalDragUpdate: (details) {
 if (draggable) {
 setState(() {
 dragDy =
 (details.globalPosition.dy -
-dragStart.dy)
+dragStart)
 .clamp(0.0, 50.0);
 if (dragDy == 50.0) {
 draggable = false;
@@ -210,7 +219,7 @@ Path()
 ..relativeLineTo(0, 350 + dragDy)
 ..relativeLineTo(-2, 0)
 ..relativeLineTo(-2, 15)
-..relativeLineTo(13, 0)
+..relativeLineTo(12, 0)
 ..relativeLineTo(-2, -15)
 ..relativeLineTo(-2, 0)
 ..relativeLineTo(0, -350 - dragDy)
