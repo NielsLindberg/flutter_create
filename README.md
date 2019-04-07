@@ -1,6 +1,6 @@
 # flutter_create
 
-A small 5117 bytes flutter application for the 2019 FlutterCreate challenge.
+A small 4931 bytes flutter application for the 2019 FlutterCreate challenge.
 Developed in Android Studio and tested on Android Emulator & Devices. I don't have access to iOS devices other than the emulator 'iOS rendering platform' to test but I guess it should work.
 
 ## Idea

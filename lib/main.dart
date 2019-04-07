@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'dart:math';
-import 'dart:ui';
+
 void main() => runApp(FlutterCreate());
+
 class FlutterCreate extends StatelessWidget {
 @override
 Widget build(BuildContext context) {
@@ -9,10 +9,12 @@ return MaterialApp(
 debugShowCheckedModeBanner: false, home: Scaffold(body: LampScreen()));
 }
 }
+
 class LampScreen extends StatefulWidget {
 @override
 _LampScreenState createState() => _LampScreenState();
 }
+
 class _LampScreenState extends State<LampScreen> with TickerProviderStateMixin {
 double dragStart = 0.0;
 double dragDy = 0.0;
@@ -43,18 +45,17 @@ dragDy = animDy.value;
 });
 super.initState();
 }
+
 @override
 void dispose() {
 lampController.dispose();
 super.dispose();
 }
+
 @override
 Widget build(BuildContext context) {
-final double w = MediaQuery.of(context).size.width;
-final double h = MediaQuery.of(context).size.height;
 final double designW = 411.430;
 final double designH = 683.428;
-final double ratio = min(w / designW, h / designH);
 return Container(
 width: double.infinity,
 height: double.infinity,
@@ -62,8 +63,8 @@ color: color.shade300,
 child: Stack(children: [
 Align(
 alignment: Alignment.topCenter,
-child: Transform.scale(
-scale: ratio,
+child: FittedBox(
+fit: BoxFit.contain,
 alignment: Alignment.topCenter,
 child: SizedBox(
 width: designW,
@@ -98,7 +99,8 @@ height: 75,
 child: GestureDetector(
 onVerticalDragStart: (details) {
 lampController.stop();
-dragStart = details.globalPosition.dy - dragDy;
+dragStart =
+details.globalPosition.dy - dragDy;
 draggable = true;
 dragging = true;
 },
@@ -161,6 +163,7 @@ color = Colors.primaries[i];
 ]));
 }
 }
+
 class LampPainter extends CustomPainter {
 final MaterialColor color;
 final bool lampOn;
@@ -226,6 +229,7 @@ Path()
 ..close(),
 paint..color = color.shade900);
 }
+
 @override
 bool shouldRepaint(CustomPainter oldDelegate) {
 return oldDelegate != this;
