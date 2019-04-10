@@ -6,6 +6,8 @@ Developed in Android Studio and tested on Android Emulator & Devices. I don't ha
 ## Idea
 Because of how well CustomPaint, Gestures and Animations integrate together it has completely changed how I imagine mobile apps. So for this app I knew I wanted to do something fun and creative with the use of CustomPaint, GestureDetectors and Animations. The application is a lamp that is designed using CustomPaint. The lamp can be turned on and off by pulling down a hanging cord. When turned on the lamp shines a light onto the ground making some alternating flutter feature text visible. Because the lamp is completely coded it is smoothly adjusted to both drag gestures and animations as well as being responsive to device dimensions. In the bottom is a selectable list of material primary color swatches that can be selected to change the color style of the app.
 
+![Unlit](unlit.png) ![Lit](lit.png)
+
 ## Install
 
 ### Using Github
